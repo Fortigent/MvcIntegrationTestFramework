@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace MyMvcApplicaton.MSTests
 {
     [TestClass]
-    public class UnitTest1
+    public class HomeControllerTests
     {
         private AppHost appHost;
 
