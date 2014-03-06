@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvcIntegrationTestFramework.Browsing;
 using MvcIntegrationTestFramework.Hosting;
 using System.Web.Mvc;
+using MyMvcApplication.Controllers;
 
 namespace MyMvcApplicaton.MSTests
 {
@@ -16,7 +16,7 @@ namespace MyMvcApplicaton.MSTests
         {
             //If you MVC project is not in the root of your solution directory then include the path
             //e.g. AppHost.Simulate("Website\MyMvcApplication")
-            appHost = AppHost.Simulate("MyMvcApplication");
+            appHost = AppHost.Simulate("MyMvcApplication");	
         }
 
         [TestMethod]
@@ -91,5 +91,31 @@ namespace MyMvcApplicaton.MSTests
                 Assert.AreEqual("Hello, you're logged in as steve", afterLoginResult.ResponseText);
             });
         }
+
+				[TestMethod]
+				public void GetJsonData()
+				{
+					appHost.Start(browsingSession =>
+					{
+						string url = "home/GetJsonData";
+						var result = browsingSession.Get(url);
+
+						var jsonResult = (JsonResult)result.ActionExecutedContext.Result;
+						Assert.IsInstanceOfType(jsonResult.Data, typeof(HomeViewModel));
+					});
+				}
+
+				[TestMethod]
+				public void SaveJsonData()
+				{
+					appHost.Start(browsingSession =>
+					{
+						string url = "home/SaveJsonData";
+						var result = browsingSession.Post(url, new { Title = "NewTitle" });
+
+						var jsonResult = (JsonResult)result.ActionExecutedContext.Result;
+						Assert.AreEqual("NewTitleSaved", jsonResult.Data);
+					});
+				}
     }
 }
