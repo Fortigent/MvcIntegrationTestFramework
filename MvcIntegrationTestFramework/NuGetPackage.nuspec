@@ -5,6 +5,8 @@
 		<id>MvcIntegrationTestFramework</id>
 		<version>$version$</version>
 		<title>MvcIntegrationTestFramework</title>
+    <authors></authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>MvcIntegrationTestFramework</description>
 		<copyright></copyright>
 		<references>
