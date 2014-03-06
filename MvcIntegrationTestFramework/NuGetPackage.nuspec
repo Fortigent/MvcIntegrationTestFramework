@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<!-- for reference, see http://docs.nuget.org/docs/reference/nuspec-reference -->
+<package>
+	<metadata>
+		<id>MvcIntegrationTestFramework</id>
+		<version>$version$</version>
+		<title>MvcIntegrationTestFramework</title>
+		<description>MvcIntegrationTestFramework</description>
+		<copyright></copyright>
+		<references>
+			<reference file="MvcIntegrationTestFramework.dll" />
+		</references>
+	</metadata>
+	<files>
+		<file src="bin\Release\*.dll" target="lib" />
+		<file src="bin\Release\*.pdb" target="lib" />
+	</files>
+</package>
