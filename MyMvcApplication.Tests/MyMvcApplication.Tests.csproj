@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeControllerSharedSessionTests.cs" />
     <Compile Include="HomeControllerTests.cs" />
     <Compile Include="NameValueCollectionConversionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

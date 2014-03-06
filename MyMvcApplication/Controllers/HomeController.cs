@@ -40,6 +40,12 @@ namespace MyMvcApplication.Controllers
 		{
 			return Content("Hello, you're logged in as " + User.Identity.Name);
 		}
+
+		[Authorize]
+		public ActionResult SecretAction2()
+		{
+			return Content("SecretAction2 - Hello, you're logged in as " + User.Identity.Name);
+		}
 	}
 
 	public class HomeViewModel

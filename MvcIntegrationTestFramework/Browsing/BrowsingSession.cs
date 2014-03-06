@@ -10,6 +10,7 @@ using MvcIntegrationTestFramework.Interception;
 
 namespace MvcIntegrationTestFramework.Browsing
 {
+	[Serializable]
     public class BrowsingSession
     {
         public HttpSessionState Session { get; private set; }
