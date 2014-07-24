@@ -85,6 +85,9 @@ namespace MvcIntegrationTestFramework.Browsing
             // Capture the output
             AddAnyNewCookiesToCookieCollection();
             Session = LastRequestData.HttpSessionState;
+
+            if (LastRequestData.ActionExecutedContext.Exception != null) throw LastRequestData.ActionExecutedContext.Exception;
+
             return new RequestResult
             {
                 ResponseText = output.ToString(),
